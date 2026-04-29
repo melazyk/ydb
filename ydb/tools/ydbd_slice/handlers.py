@@ -500,12 +500,6 @@ mon={mon}""".format(
             )
         )
 
-        self.nodes.execute_async(
-            "sudo bash -c 'set -o pipefail && yav get version {yav_version} -o tvm_secret |  sudo tee {tvm_secret}'".format(
-                yav_version=self.yav_version,
-                tvm_secret=os.path.join(self.slice_secrets_path, 'tvm_secret')
-            )
-        )
 
     def slice_update(self):
         if self.configurator is None:
